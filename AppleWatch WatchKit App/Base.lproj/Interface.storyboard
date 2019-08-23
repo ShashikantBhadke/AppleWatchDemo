@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AppleWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="131" alignment="left" text="Label" numberOfLines="3" id="vMw-Ii-XTB"/>
+                        <button width="1" alignment="left" title="Steps" id="xju-Mh-Gi9">
+                            <connections>
+                                <action selector="btnStepsPressed" destination="AgC-eL-Hgc" id="su3-wS-vXL"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="HeartBeats" id="h9s-BX-EU7">
+                            <connections>
+                                <action selector="btnHeartBeatsPressed" destination="AgC-eL-Hgc" id="qdc-Yh-9Cs"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Gyroscope" id="gvR-ox-D2y">
+                            <connections>
+                                <action selector="btnGyroscopePressed" destination="AgC-eL-Hgc" id="Qd8-qS-Y8E"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Accelerometer" id="QyH-ia-CPo">
+                            <connections>
+                                <action selector="btnAccelerometerPressed" destination="AgC-eL-Hgc" id="n7W-C7-fSo"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="btnAccelerometer" destination="QyH-ia-CPo" id="TlZ-MP-rwf"/>
+                        <outlet property="btnGyroscope" destination="gvR-ox-D2y" id="57S-h0-bb7"/>
+                        <outlet property="btnHeartBeats" destination="h9s-BX-EU7" id="Gk2-KI-sdw"/>
+                        <outlet property="btnSteps" destination="xju-Mh-Gi9" id="3f3-Az-N2r"/>
+                        <outlet property="lblMsg" destination="vMw-Ii-XTB" id="lcj-aa-jmP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="152" y="1141.5"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="152" y="569"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="AppleWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="719"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="AppleWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="320"/>
+        </scene>
+    </scenes>
+</document>
